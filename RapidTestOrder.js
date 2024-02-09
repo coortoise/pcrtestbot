@@ -3,9 +3,16 @@ class RapidTestOrder {
     this.OrderState = {
       WELCOMING: () => {
         let aReturn = [];
-        this.stateCur = this.OrderState.RESERVING;
+        this.stateCur = this.OrderState.SIZE;
         aReturn.push("Welcome to Curtis' Coffee Club.");
         aReturn.push("What size coffee would you like?");
+        return aReturn;
+      },
+      SIZE: () => {
+        let aReturn = [];
+        this.stateCur = this.OrderState.RESERVING;
+        aReturn.push("How would you like your coffee?");
+        aReturn.push("Black or Regular?");
         return aReturn;
       },
       RESERVING: (sInput) => {
