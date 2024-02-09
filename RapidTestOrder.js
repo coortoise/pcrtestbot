@@ -4,8 +4,8 @@ class RapidTestOrder {
       WELCOMING: () => {
         let aReturn = [];
         this.stateCur = this.OrderState.RESERVING;
-        aReturn.push("Welcome to Rich's Rapid Test.");
-        aReturn.push("Would you like to reserve a rapid test kit?");
+        aReturn.push("Welcome to Curtis' Coffee Club.");
+        aReturn.push("What size coffee would you like?");
         return aReturn;
       },
       RESERVING: (sInput) => {
@@ -17,8 +17,8 @@ class RapidTestOrder {
           d.setMinutes(d.getMinutes() + 120);
           aReturn.push(`Please pick it up at 123 Tidy St., Acton before ${d.toTimeString()}`);
         } else {
-          aReturn.push("Thanks for trying our reservation system");
-          aReturn.push("Maybe next time")
+          aReturn.push("Please leave if you are not here to order");
+          aReturn.push("Bye bye now")
         }
         return aReturn;
       }
